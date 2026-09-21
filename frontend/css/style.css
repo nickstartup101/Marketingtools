@@ -1,0 +1,39 @@
+/* ນຳເຂົ້າ Font Noto Sans Lao ສຳລັບພາສາລາວ ແລະ Plus Jakarta Sans ສຳລັບ ENG */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-main: #04070e;
+  --bg-sidebar: #080d1a;
+  --bg-card: #0c1322;
+  --border-color: #1e293b;
+  --primary-accent: #6366f1;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Lao', sans-serif;
+  background-color: var(--bg-main);
+  color: #f8fafc;
+  line-height: 1.5;
+}
+
+/* ປັບໄລຍະຫ່າງສຳລັບຕົວໜັງສືພາສາລາວໃຫ້ນຽນຕາ */
+body:lang(lo) {
+  font-family: 'Noto Sans Lao', 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.65;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
