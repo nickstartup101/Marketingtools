@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Iced Smoked Maple Cortado — Customizer</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,400&amp;family=Noto+Sans+Lao:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@200..600,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "canvas": "#FAF9F6",
+            "canvas-pure": "#FFFFFF",
+            "hairline": "#EAE8E4",
+            "hairline-dark": "#DCDAD5",
+            "charcoal": "#1A1A1A",
+            "muted-body": "#6B6A67",
+            "subtle-label": "#92908B",
+            "accent-sand": "#C5A880",
+            "forest-black": "#0E1813",
+            "warm-white": "#F4F3F0"
+          },
+          fontFamily: {
+            "sans": ["DM Sans", "Noto Sans Lao", "sans-serif"],
+            "serif": ["Playfair Display", "serif"],
+            "lao": ["Noto Sans Lao", "DM Sans", "sans-serif"]
+          },
+          letterSpacing: {
+            "widest-sm": "0.14em",
+            "tighter-editorial": "-0.02em"
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        background-color: #FAF9F6;
+        color: #1A1A1A;
+        -webkit-font-smoothing: antialiased;
+      }
+      body {
+        overscroll-behavior-y: none;
+      }
+      .pb-safe {
+        padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+      }
+      .pt-safe {
+        padding-top: max(env(safe-area-inset-top, 0px), 12px);
+      }
+    }
+    ::-webkit-scrollbar { display: none; }
+    .transition-subtle {
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+<body class="bg-canvas font-sans text-charcoal min-h-screen flex flex-col selection:bg-hairline selection:text-charcoal">
+<!-- Top Minimalist App Header -->
+<header class="fixed top-0 w-full z-40 bg-canvas/90 backdrop-blur-md border-b border-hairline/70 pt-safe">
+<div class="h-14 px-5 flex items-center justify-between max-w-lg mx-auto">
+<button aria-label="Go back" class="w-9 h-9 -ml-2 rounded-full flex items-center justify-center text-charcoal/80 hover:text-charcoal hover:bg-hairline/50 transition-subtle active:scale-95" onclick="history.back()">
+<span class="material-symbols-outlined text-[20px] font-light">arrow_back</span>
+</button>
+<div class="text-center">
+<span class="font-serif italic text-[15px] tracking-tight text-charcoal font-medium">Boutique Atelier</span>
+<span class="block text-[9px] uppercase tracking-[0.2em] text-subtle-label -mt-0.5">Drink Customizer</span>
+</div>
+<button aria-label="Save to favorites" class="w-9 h-9 -mr-2 rounded-full flex items-center justify-center text-charcoal/80 hover:text-charcoal hover:bg-hairline/50 transition-subtle active:scale-90" id="fav-btn" onclick="toggleFavorite()">
+<span class="material-symbols-outlined text-[20px] transition-colors" id="fav-icon" style="font-variation-settings: 'FILL' 0, 'wght' 300;">favorite</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 w-full max-w-lg mx-auto pt-20 pb-36 px-5 flex flex-col gap-7">
+<!-- Hero Image & Refined Editorial Typography -->
+<section class="flex flex-col gap-4">
+<div class="relative w-full aspect-[4/3.8] rounded-xl overflow-hidden bg-hairline/40 border border-hairline shadow-[0_2px_12px_rgba(0,0,0,0.02)]">
+<img alt="Iced Smoked Maple Cortado in fluted crystal glassware" class="w-full h-full object-cover object-center transform hover:scale-[1.02] transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB_Pd8epmNkuwrpyn3NnydBvnzGT5ZH_JJe77hrh4avFXdYJ6sRIXmMT8aU_SZAv8sV-EzyEmKysavaN9X4woxUvBgBbk-9HAco1zSM0FyKXiOpHq5ckOFlazWqg5xH0h27tWxMUXqErlk9tzzfssEnDesjq3Zi3cOynOhSNdp8B01yPcAwW3gRWyrIYzxzkvmYnHbMqm6-dVQHzVkcVENufK7ZVj0wA6MDL83Zw8dz0v6oyxoJauG"/>
+<!-- Minimal Badge Overlays -->
+<div class="absolute top-3.5 left-3.5 flex items-center gap-1.5">
+<span class="px-2.5 py-1 text-[9px] uppercase tracking-[0.16em] font-medium bg-canvas-pure/90 backdrop-blur-md text-charcoal rounded-full border border-hairline shadow-xs">Seasonal</span>
+<span class="px-2.5 py-1 text-[9px] uppercase tracking-[0.16em] font-medium bg-canvas-pure/90 backdrop-blur-md text-muted-body rounded-full border border-hairline shadow-xs">Curated</span>
+</div>
+</div>
+<!-- Title & Price Bar -->
+<div class="pt-1 border-b border-hairline pb-5">
+<div class="flex items-baseline justify-between gap-3">
+<div>
+<h1 class="font-serif text-[26px] leading-[1.25] tracking-tighter-editorial text-charcoal font-normal">
+              Iced Smoked Maple Cortado
+            </h1>
+<p class="text-[11px] font-sans tracking-wide text-subtle-label mt-1">
+              Double Ristretto • 185 kcal • ໄອສ໌ ໂຄຕາໂດ
+            </p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-serif text-[26px] tracking-tight text-charcoal font-normal" id="header-price">$6.50</span>
+</div>
+</div>
+<p class="text-[13px] leading-relaxed text-muted-body font-light mt-3">
+          Layered espresso with smoked Vermont maple syrup, chilled organic milk, and a crown of hand-whipped sea salt foam.
+        </p>
+<!-- Tasting Notes Strip -->
+<div class="mt-3.5 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px] text-muted-body font-light">
+<span class="flex items-center gap-1.5">
+<span class="w-1 h-1 rounded-full bg-accent-sand"></span> Smoked Amber Maple
+          </span>
+<span class="flex items-center gap-1.5">
+<span class="w-1 h-1 rounded-full bg-accent-sand"></span> Toasted Walnut
+          </span>
+<span class="flex items-center gap-1.5">
+<span class="w-1 h-1 rounded-full bg-accent-sand"></span> Single-Origin Huila
+          </span>
+</div>
+</div>
+</section>
+<!-- Customization Form Sections -->
+<div class="flex flex-col gap-6">
+<!-- 1. Size Selection -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-baseline justify-between">
+<label class="text-[12px] font-medium uppercase tracking-[0.16em] text-charcoal">
+            01. Size Selection <span class="font-lao font-normal normal-case text-subtle-label text-[11px] ml-1">(ຂະໜາດຈອກ)</span>
+</label>
+<span class="text-[11px] text-subtle-label tracking-wide">Select 1</span>
+</div>
+<div class="grid grid-cols-3 gap-2.5" id="size-group">
+<!-- Regular -->
+<button class="size-btn group relative flex flex-col items-center justify-center py-3.5 px-2 rounded-lg bg-canvas-pure border-2 border-charcoal text-charcoal transition-subtle shadow-2xs" data-price="0.00" onclick="selectSize(this, 0.00)" type="button">
+<span class="material-symbols-outlined text-[19px] mb-1 font-light opacity-90">coffee</span>
+<span class="text-[13px] font-medium tracking-tight">Regular</span>
+<span class="text-[10px] text-muted-body mt-0.5 tracking-wide">8 oz</span>
+<span class="text-[11px] font-sans font-medium text-charcoal mt-1 tracking-tight">Standard</span>
+</button>
+<!-- Large -->
+<button class="size-btn group relative flex flex-col items-center justify-center py-3.5 px-2 rounded-lg bg-canvas-pure border border-hairline text-charcoal hover:border-hairline-dark transition-subtle" data-price="0.80" onclick="selectSize(this, 0.80)" type="button">
+<span class="material-symbols-outlined text-[19px] mb-1 font-light text-subtle-label group-hover:text-charcoal transition-colors">local_cafe</span>
+<span class="text-[13px] font-medium tracking-tight">Large</span>
+<span class="text-[10px] text-muted-body mt-0.5 tracking-wide">12 oz</span>
+<span class="text-[11px] font-sans text-muted-body mt-1 tracking-tight">+$0.80</span>
+</button>
+<!-- Grand -->
+<button class="size-btn group relative flex flex-col items-center justify-center py-3.5 px-2 rounded-lg bg-canvas-pure border border-hairline text-charcoal hover:border-hairline-dark transition-subtle" data-price="1.40" onclick="selectSize(this, 1.40)" type="button">
+<span class="material-symbols-outlined text-[19px] mb-1 font-light text-subtle-label group-hover:text-charcoal transition-colors">emoji_food_beverage</span>
+<span class="text-[13px] font-medium tracking-tight">Grand</span>
+<span class="text-[10px] text-muted-body mt-0.5 tracking-wide">16 oz</span>
+<span class="text-[11px] font-sans text-muted-body mt-1 tracking-tight">+$1.40</span>
+</button>
+</div>
+</section>
+<!-- 2. Choice of Milk -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-baseline justify-between">
+<label class="text-[12px] font-medium uppercase tracking-[0.16em] text-charcoal">
+            02. Choice of Milk <span class="font-lao font-normal normal-case text-subtle-label text-[11px] ml-1">(ເລືອກນົມ)</span>
+</label>
+<span class="text-[11px] text-subtle-label tracking-wide">Choice of 1</span>
+</div>
+<div class="flex flex-col rounded-lg bg-canvas-pure border border-hairline divide-y divide-hairline overflow-hidden shadow-2xs" id="milk-group">
+<!-- Whole Milk -->
+<div class="milk-opt flex items-center justify-between p-3.5 px-4 cursor-pointer hover:bg-warm-white/50 transition-subtle" data-price="0.00" onclick="selectMilk(this, 0.00)">
+<div class="flex items-center gap-3">
+<span class="radio-indicator w-4 h-4 rounded-full border border-hairline-dark flex items-center justify-center transition-all"></span>
+<div>
+<p class="text-[13px] font-medium text-charcoal leading-tight">Whole Milk</p>
+<p class="text-[11px] text-muted-body font-light mt-0.5">Pasture-raised, local dairy • ນົມສົດແທ້</p>
+</div>
+</div>
+<span class="text-[12px] text-subtle-label font-light">Free</span>
+</div>
+<!-- Oat Milk (Default Selected) -->
+<div class="milk-opt flex items-center justify-between p-3.5 px-4 cursor-pointer bg-warm-white/40 transition-subtle" data-price="0.75" onclick="selectMilk(this, 0.75)">
+<div class="flex items-center gap-3">
+<span class="radio-indicator w-4 h-4 rounded-full border border-charcoal bg-charcoal flex items-center justify-center transition-all">
+<span class="w-1.5 h-1.5 rounded-full bg-canvas-pure"></span>
+</span>
+<div>
+<p class="text-[13px] font-medium text-charcoal leading-tight">Oat Milk (Oatly Barista)</p>
+<p class="text-[11px] text-muted-body font-light mt-0.5">Silky, neutral micro-foam • ນົມເຂົ້າໂອດ</p>
+</div>
+</div>
+<span class="text-[12px] font-medium text-charcoal">+$0.75</span>
+</div>
+<!-- Almond Milk -->
+<div class="milk-opt flex items-center justify-between p-3.5 px-4 cursor-pointer hover:bg-warm-white/50 transition-subtle" data-price="0.75" onclick="selectMilk(this, 0.75)">
+<div class="flex items-center gap-3">
+<span class="radio-indicator w-4 h-4 rounded-full border border-hairline-dark flex items-center justify-center transition-all"></span>
+<div>
+<p class="text-[13px] font-medium text-charcoal leading-tight">Artisanal Almond Milk</p>
+<p class="text-[11px] text-muted-body font-light mt-0.5">Unsweetened, subtle nutty finish • ນົມອານມອນດ໌</p>
+</div>
+</div>
+<span class="text-[12px] font-light text-muted-body">+$0.75</span>
+</div>
+<!-- Soy Milk -->
+<div class="milk-opt flex items-center justify-between p-3.5 px-4 cursor-pointer hover:bg-warm-white/50 transition-subtle" data-price="0.50" onclick="selectMilk(this, 0.50)">
+<div class="flex items-center gap-3">
+<span class="radio-indicator w-4 h-4 rounded-full border border-hairline-dark flex items-center justify-center transition-all"></span>
+<div>
+<p class="text-[13px] font-medium text-charcoal leading-tight">Organic Soy Milk</p>
+<p class="text-[11px] text-muted-body font-light mt-0.5">Smooth, classic body • ນົມຖົ່ວເຫຼືອງ</p>
+</div>
+</div>
+<span class="text-[12px] font-light text-muted-body">+$0.50</span>
+</div>
+</div>
+</section>
+<!-- 3. Sweetness & Ice Level -->
+<section class="flex flex-col gap-4">
+<div class="flex items-baseline justify-between">
+<label class="text-[12px] font-medium uppercase tracking-[0.16em] text-charcoal">
+            03. Sweetness &amp; Ice <span class="font-lao font-normal normal-case text-subtle-label text-[11px] ml-1">(ຄວາມຫວານ &amp; ນ້ຳກ້ອນ)</span>
+</label>
+</div>
+<div class="p-4 rounded-lg bg-canvas-pure border border-hairline flex flex-col gap-4 shadow-2xs">
+<!-- Maple Sweetness -->
+<div>
+<div class="flex justify-between items-baseline mb-2">
+<span class="text-[12px] text-charcoal font-medium">Smoked Maple Sweetness</span>
+<span class="text-[11px] text-muted-body font-normal" id="sweetness-value">100% (Standard)</span>
+</div>
+<div class="grid grid-cols-4 gap-1.5 p-1 bg-warm-white rounded-md border border-hairline/80" id="sweetness-pills">
+<button class="sweet-btn py-1.5 text-center rounded text-[11px] font-normal text-muted-body transition-subtle hover:text-charcoal" onclick="setSweetness(this, '0% (Unsweetened)')" type="button">0%</button>
+<button class="sweet-btn py-1.5 text-center rounded text-[11px] font-normal text-muted-body transition-subtle hover:text-charcoal" onclick="setSweetness(this, '50% (Half Sweet)')" type="button">50%</button>
+<button class="sweet-btn py-1.5 text-center rounded text-[11px] font-medium bg-canvas-pure text-charcoal shadow-2xs" onclick="setSweetness(this, '100% (Standard)')" type="button">100%</button>
+<button class="sweet-btn py-1.5 text-center rounded text-[11px] font-normal text-muted-body transition-subtle hover:text-charcoal" onclick="setSweetness(this, '120% (Extra Sweet)')" type="button">120%</button>
+</div>
+</div>
+<div class="h-px bg-hairline"></div>
+<!-- Ice Level -->
+<div>
+<div class="flex justify-between items-baseline mb-2">
+<span class="text-[12px] text-charcoal font-medium">Chilled Ice Level</span>
+<span class="text-[11px] text-muted-body font-normal" id="ice-value">Regular Ice</span>
+</div>
+<div class="grid grid-cols-3 gap-1.5 p-1 bg-warm-white rounded-md border border-hairline/80" id="ice-pills">
+<button class="ice-btn py-1.5 text-center rounded text-[11px] font-normal text-muted-body transition-subtle hover:text-charcoal" onclick="setIce(this, 'No Ice')" type="button">No Ice</button>
+<button class="ice-btn py-1.5 text-center rounded text-[11px] font-normal text-muted-body transition-subtle hover:text-charcoal" onclick="setIce(this, 'Less Ice')" type="button">Less Ice</button>
+<button class="ice-btn py-1.5 text-center rounded text-[11px] font-medium bg-canvas-pure text-charcoal shadow-2xs" onclick="setIce(this, 'Regular Ice')" type="button">Regular</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Gourmet Add-ons -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-baseline justify-between">
+<label class="text-[12px] font-medium uppercase tracking-[0.16em] text-charcoal">
+            04. Finishes &amp; Accents <span class="font-lao font-normal normal-case text-subtle-label text-[11px] ml-1">(ລາຍການເພີ່ມເຕີມ)</span>
+</label>
+<span class="text-[11px] text-subtle-label tracking-wide">Optional</span>
+</div>
+<div class="flex flex-col rounded-lg bg-canvas-pure border border-hairline divide-y divide-hairline overflow-hidden shadow-2xs">
+<!-- Extra Shot -->
+<label class="flex items-center justify-between p-3.5 px-4 cursor-pointer hover:bg-warm-white/50 transition-subtle">
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 rounded border-hairline-dark text-charcoal focus:ring-0 focus:ring-offset-0 transition-subtle cursor-pointer" data-price="1.20" id="addon-shot" onchange="calculateTotal()" type="checkbox"/>
+<div>
+<p class="text-[13px] font-medium text-charcoal">Extra Double Ristretto</p>
+<p class="text-[11px] text-muted-body font-light">Direct-trade Huila espresso extraction</p>
+</div>
+</div>
+<span class="text-[12px] text-muted-body font-light">+$1.20</span>
+</label>
+<!-- Vanilla Bean Foam -->
+<label class="flex items-center justify-between p-3.5 px-4 cursor-pointer hover:bg-warm-white/50 transition-subtle">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 rounded border-hairline-dark text-charcoal focus:ring-0 focus:ring-offset-0 transition-subtle cursor-pointer" data-price="1.00" id="addon-foam" onchange="calculateTotal()" type="checkbox"/>
+<div>
+<p class="text-[13px] font-medium text-charcoal">Sea Salt Vanilla Cold Foam</p>
+<p class="text-[11px] text-muted-body font-light">Madagascan bourbon bean whipped cream</p>
+</div>
+</div>
+<span class="text-[12px] font-medium text-charcoal">+$1.00</span>
+</label>
+<!-- Maldon Sea Salt -->
+<label class="flex items-center justify-between p-3.5 px-4 cursor-pointer hover:bg-warm-white/50 transition-subtle">
+<div class="flex items-center gap-3">
+<input checked="" class="w-4 h-4 rounded border-hairline-dark text-charcoal focus:ring-0 focus:ring-offset-0 transition-subtle cursor-pointer" id="addon-salt" type="checkbox"/>
+<div>
+<p class="text-[13px] font-medium text-charcoal">Smoked Maldon Sea Salt Flakes</p>
+<p class="text-[11px] text-muted-body font-light">Subtle mineral crunch on surface</p>
+</div>
+</div>
+<span class="text-[11px] text-subtle-label uppercase tracking-widest-sm font-normal">Included</span>
+</label>
+<!-- Cinnamon Dust -->
+<label class="flex items-center justify-between p-3.5 px-4 cursor-pointer hover:bg-warm-white/50 transition-subtle">
+<div class="flex items-center gap-3">
+<input class="w-4 h-4 rounded border-hairline-dark text-charcoal focus:ring-0 focus:ring-offset-0 transition-subtle cursor-pointer" id="addon-cinnamon" type="checkbox"/>
+<div>
+<p class="text-[13px] font-medium text-charcoal">Ceylon Cinnamon Bark Dust</p>
+<p class="text-[11px] text-muted-body font-light">Stone-ground aromatic spice garnish</p>
+</div>
+</div>
+<span class="text-[11px] text-subtle-label uppercase tracking-widest-sm font-normal">Included</span>
+</label>
+</div>
+</section>
+<!-- 5. Barista Special Request -->
+<section class="flex flex-col gap-2.5">
+<div class="flex items-baseline justify-between">
+<label class="text-[12px] font-medium uppercase tracking-[0.16em] text-charcoal" for="barista-notes">
+            05. Special Request <span class="font-lao font-normal normal-case text-subtle-label text-[11px] ml-1">(ໝາຍເຫດເຖິງບາຣິສຕ້າ)</span>
+</label>
+<span class="text-[11px] text-subtle-label tracking-wide">Optional</span>
+</div>
+<div class="relative">
+<textarea class="w-full bg-canvas-pure text-charcoal text-[13px] font-sans rounded-lg p-3 px-3.5 border border-hairline focus:border-charcoal focus:ring-0 transition-subtle resize-none placeholder:text-subtle-label/70 placeholder:font-light shadow-2xs" id="barista-notes" placeholder="Dietary notes, cup temperature, or serve in personal tumbler..." rows="2"></textarea>
+</div>
+</section>
+</div>
+</main>
+<!-- Elegant Minimalist Bottom Floating Bar -->
+<aside class="fixed bottom-0 left-0 w-full z-40 pb-safe pointer-events-none">
+<div class="max-w-lg mx-auto px-5 py-3 pointer-events-auto">
+<div class="p-2 pl-3 bg-canvas-pure/95 backdrop-blur-lg border border-hairline rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] flex items-center justify-between gap-3">
+<!-- Subtle Stepper -->
+<div class="flex items-center bg-warm-white rounded-lg p-0.5 border border-hairline/80">
+<button aria-label="Decrease quantity" class="w-8 h-8 rounded-md flex items-center justify-center text-charcoal hover:bg-canvas-pure transition-subtle active:scale-95" onclick="adjustQty(-1)" type="button">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="text-[13px] font-medium text-charcoal px-2.5 min-w-[24px] text-center" id="qty-count">1</span>
+<button aria-label="Increase quantity" class="w-8 h-8 rounded-md flex items-center justify-center text-charcoal hover:bg-canvas-pure transition-subtle active:scale-95" onclick="adjustQty(1)" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<!-- High-contrast Minimal Action Button -->
+<button class="flex-1 h-11 px-5 rounded-lg bg-forest-black text-canvas-pure hover:bg-charcoal active:scale-[0.98] transition-subtle flex items-center justify-between shadow-xs group" id="cart-btn" onclick="addToOrder()" type="button">
+<span class="text-[12px] uppercase tracking-[0.14em] font-medium flex items-center gap-1.5">
+<span>Add to Cart</span>
+<span class="font-lao normal-case font-light text-[11px] opacity-70">(ເພີ່ມໃສ່ກະຕ່າ)</span>
+</span>
+<span class="font-serif text-[16px] tracking-tight font-normal group-hover:translate-x-0.5 transition-transform" id="cart-total-label">$8.25</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Minimal Feedback Toast -->
+<div class="fixed top-18 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 pointer-events-none opacity-0 translate-y-3 px-4 py-2 rounded-full bg-forest-black text-canvas-pure flex items-center gap-2 shadow-lg text-[12px] font-light" id="toast">
+<span class="material-symbols-outlined text-[16px] text-accent-sand font-light">check</span>
+<span id="toast-text">Added to your atelier list</span>
+</div>
+<script>
+    let basePrice = 6.50;
+    let sizeAddon = 0.00;
+    let milkAddon = 0.75;
+    let quantity = 1;
+    let isFavorite = false;
+
+    function selectSize(button, price) {
+      document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.className = 'size-btn group relative flex flex-col items-center justify-center py-3.5 px-2 rounded-lg bg-canvas-pure border border-hairline text-charcoal hover:border-hairline-dark transition-subtle';
+        const icon = btn.querySelector('.material-symbols-outlined');
+        if (icon) icon.className = 'material-symbols-outlined text-[19px] mb-1 font-light text-subtle-label group-hover:text-charcoal transition-colors';
+        const priceSpan = btn.querySelector('span:last-child');
+        if (priceSpan) {
+          priceSpan.className = 'text-[11px] font-sans text-muted-body mt-1 tracking-tight';
+        }
+      });
+
+      button.className = 'size-btn group relative flex flex-col items-center justify-center py-3.5 px-2 rounded-lg bg-canvas-pure border-2 border-charcoal text-charcoal transition-subtle shadow-2xs';
+      const activeIcon = button.querySelector('.material-symbols-outlined');
+      if (activeIcon) activeIcon.className = 'material-symbols-outlined text-[19px] mb-1 font-light opacity-90';
+      const activePrice = button.querySelector('span:last-child');
+      if (activePrice) activePrice.className = 'text-[11px] font-sans font-medium text-charcoal mt-1 tracking-tight';
+
+      sizeAddon = parseFloat(price);
+      calculateTotal();
+    }
+
+    function selectMilk(element, price) {
+      document.querySelectorAll('.milk-opt').forEach(opt => {
+        opt.className = 'milk-opt flex items-center justify-between p-3.5 px-4 cursor-pointer hover:bg-warm-white/50 transition-subtle';
+        const indicator = opt.querySelector('.radio-indicator');
+        if (indicator) {
+          indicator.className = 'radio-indicator w-4 h-4 rounded-full border border-hairline-dark flex items-center justify-center transition-all';
+          indicator.innerHTML = '';
+        }
+        const cost = opt.querySelector('span:last-child');
+        if (cost && !cost.classList.contains('text-subtle-label')) {
+          cost.className = 'text-[12px] font-light text-muted-body';
+        }
+      });
+
+      element.className = 'milk-opt flex items-center justify-between p-3.5 px-4 cursor-pointer bg-warm-white/40 transition-subtle';
+      const indicator = element.querySelector('.radio-indicator');
+      if (indicator) {
+        indicator.className = 'radio-indicator w-4 h-4 rounded-full border border-charcoal bg-charcoal flex items-center justify-center transition-all';
+        indicator.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-canvas-pure"></span>';
+      }
+      const cost = element.querySelector('span:last-child');
+      if (cost && !cost.classList.contains('text-subtle-label')) {
+        cost.className = 'text-[12px] font-medium text-charcoal';
+      }
+
+      milkAddon = parseFloat(price);
+      calculateTotal();
+    }
+
+    function setSweetness(btn, label) {
+      document.querySelectorAll('.sweet-btn').forEach(b => {
+        b.className = 'sweet-btn py-1.5 text-center rounded text-[11px] font-normal text-muted-body transition-subtle hover:text-charcoal';
+      });
+      btn.className = 'sweet-btn py-1.5 text-center rounded text-[11px] font-medium bg-canvas-pure text-charcoal shadow-2xs';
+      document.getElementById('sweetness-value').innerText = label;
+    }
+
+    function setIce(btn, label) {
+      document.querySelectorAll('.ice-btn').forEach(b => {
+        b.className = 'ice-btn py-1.5 text-center rounded text-[11px] font-normal text-muted-body transition-subtle hover:text-charcoal';
+      });
+      btn.className = 'ice-btn py-1.5 text-center rounded text-[11px] font-medium bg-canvas-pure text-charcoal shadow-2xs';
+      document.getElementById('ice-value').innerText = label;
+    }
+
+    function adjustQty(change) {
+      quantity = Math.max(1, quantity + change);
+      document.getElementById('qty-count').innerText = quantity;
+      calculateTotal();
+    }
+
+    function calculateTotal() {
+      let singleItemTotal = basePrice + sizeAddon + milkAddon;
+
+      const shotEl = document.getElementById('addon-shot');
+      if (shotEl && shotEl.checked) singleItemTotal += parseFloat(shotEl.getAttribute('data-price') || 0);
+
+      const foamEl = document.getElementById('addon-foam');
+      if (foamEl && foamEl.checked) singleItemTotal += parseFloat(foamEl.getAttribute('data-price') || 0);
+
+      const finalTotal = singleItemTotal * quantity;
+      const formatted = '$' + finalTotal.toFixed(2);
+      document.getElementById('cart-total-label').innerText = formatted;
+    }
+
+    function toggleFavorite() {
+      isFavorite = !isFavorite;
+      const icon = document.getElementById('fav-icon');
+      if (isFavorite) {
+        icon.style.fontVariationSettings = "'FILL' 1, 'wght' 300";
+        icon.classList.add('text-accent-sand');
+        showToast("Added to atelier favorites");
+      } else {
+        icon.style.fontVariationSettings = "'FILL' 0, 'wght' 300";
+        icon.classList.remove('text-accent-sand');
+        showToast("Removed from favorites");
+      }
+    }
+
+    function addToOrder() {
+      showToast(`Added ${quantity} Cortado to cart • ເພີ່ມແລ້ວ`);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      toastText.innerText = msg;
+      toast.classList.remove('opacity-0', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-3');
+      }, 2000);
+    }
+
+    calculateTotal();
+  </script>
+</body></html>
